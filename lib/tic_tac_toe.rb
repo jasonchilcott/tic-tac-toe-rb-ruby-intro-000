@@ -60,9 +60,7 @@ def current_player(board)
 end
 
 def play(board)
-  until over?(board)
-    turn(board)
-  end
+turn(board) until over?(board)
   if won?(board)
     winner = winner(board)
     puts "Congratulations #{winner}!"
