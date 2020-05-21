@@ -26,7 +26,7 @@ def move(board, index, current_player)
 end
 
 def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
+  board[index] == 'X' || board[index] == 'O'
 end
 
 def valid_move?(board, index)
@@ -62,8 +62,7 @@ end
 def play(board)
 turn(board) until over?(board)
   if won?(board)
-    winner = winner(board)
-    puts "Congratulations #{winner}!"
+    puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
   end
